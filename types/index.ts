@@ -12,3 +12,16 @@ export interface SearchManufacturerProperties {
     manufacturer: string;
     setManufacturer: (manufacturer: string) => void;
 }
+
+export interface CarProperties {
+    city_mpg: string;
+    class: string;
+    combination_mpg: number;
+    cylinders: number;
+    displacement: number;
+    drive: string;
+    fuel_type: string;
+    highway_mpg: number;
+    make: string;
+    model: string;
+    transmission: string;}
