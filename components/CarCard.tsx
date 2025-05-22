@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useState } from "react"
 import CustomButton from "./CustomButton"
 import { calculateCarRent } from "@/utils"
+import CarDetails from "./CarDetails";
 
 interface CarCardProperties {
     car: CarProperties
@@ -70,8 +71,9 @@ const CarCard = ({ car }: CarCardProperties) => {
                     />
                 </div>
             </div>
-
-            
+            <div>
+                <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car}/>
+            </div>
         </div>
     )
 }
