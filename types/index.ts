@@ -29,3 +29,10 @@ export interface CarProperties {
     transmission: string;
     year: number;
 }
+
+export interface FilterProperties {
+    manufacturer: string;
+    year: number;
+    fuel: string;
+    model: string;
+}
