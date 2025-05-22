@@ -17,3 +17,18 @@ export async function fetchCars() {
 
     return result;
 }
+
+export const calculateCarRent = (year: number, cylinders: number, displacement: number) => {
+  const basePricePerDay = 50;
+  const cylinderFactor = 2.5;
+  const displacementFactor = 3.5;
+  const ageFactor = 0.1; 
+
+  const ageRate = (new Date().getFullYear() - year) * ageFactor;
+  const cylinderRate = cylinders * cylinderFactor;
+  const displacementRate = displacement * displacementFactor;
+
+  const rentalRatePerDay = basePricePerDay + cylinderRate + displacementRate + ageRate;
+
+  return rentalRatePerDay.toFixed(0);
+};

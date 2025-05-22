@@ -21,7 +21,9 @@ export interface CarProperties {
     displacement: number;
     drive: string;
     fuel_type: string;
-    highway_mpg: number;
+    highway_mpg: string;
     make: string;
     model: string;
-    transmission: string;}
+    transmission: string;
+    year: number;
+}
