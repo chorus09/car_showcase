@@ -46,3 +46,8 @@ export interface CustomFilterProperties {
     title: string;
     options: OptionProperties[];
 }
+
+export interface ShowMoreProperties {
+    pageNumber: number;
+    isNext: boolean;
+}
