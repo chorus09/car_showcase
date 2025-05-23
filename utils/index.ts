@@ -1,27 +1,31 @@
 import { CarProperties, FilterProperties } from "@/types";
 
 export async function fetchCars(filters: FilterProperties) {
-  const { manufacturer, year, model, fuel } = filters;
+  const { manufacturer, model, year, fuel } = filters;
 
   const headers = {
-    'X-RapidAPI-Key': '',
+    'X-RapidAPI-Key': '1a8d4ba62emsh1d074013ccf56f0p1dab1fjsnd41c2e2589e5',
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
+  // Construim URL-ul cu parametri dinamici
+  const url = new URL("https://cars-by-api-ninjas.p.rapidapi.com/v1/cars");
+  
+  if (manufacturer) url.searchParams.append("make", manufacturer);
+  if (model) url.searchParams.append("model", model);
+  if (year) url.searchParams.append("year", year.toString());
+  if (fuel) url.searchParams.append("fuel_type", fuel);
 
-    const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`,
-    {
-      headers: headers,
-    }
-  );
+  const response = await fetch(url.toString(), {
+    headers: headers,
+  });
 
-    console.log("URL FETCH:", response.url);
-    console.log("RESPONSE STATUS:", response.status);
-    const result = await response.json();
-    console.log("RESULT:", result);
+  console.log("URL FETCH:", response.url);
+  console.log("RESPONSE STATUS:", response.status);
+  const result = await response.json();
+  console.log("RESULT:", result);
 
-    return result;
+  return result;
 }
 
 export const calculateCarRent = (year: number, cylinders: number, displacement: number) => {

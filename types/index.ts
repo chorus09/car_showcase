@@ -32,8 +32,8 @@ export interface CarProperties {
 
 export interface FilterProperties {
     manufacturer: string;
-    year: number;
-    fuel: string;
+    year?: number;
+    fuel?: string;
     model: string;
 }
 
