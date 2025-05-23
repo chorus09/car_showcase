@@ -36,3 +36,13 @@ export interface FilterProperties {
     fuel: string;
     model: string;
 }
+
+export interface OptionProperties {
+    title: string;
+    value: string;
+}
+
+export interface CustomFilterProperties {
+    title: string;
+    options: OptionProperties[];
+}
