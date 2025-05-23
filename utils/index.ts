@@ -8,7 +8,6 @@ export async function fetchCars(filters: FilterProperties) {
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
-  // Construim URL-ul cu parametri dinamici
   const url = new URL("https://cars-by-api-ninjas.p.rapidapi.com/v1/cars");
   
   if (manufacturer) url.searchParams.append("make", manufacturer);

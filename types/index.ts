@@ -11,8 +11,8 @@ export interface CustomButtonProperties {
 }
 
 export interface SearchManufacturerProperties {
-    manufacturer: string;
-    setManufacturer: (manufacturer: string) => void;
+    selected: string;
+    setSelected: (manufacturer: string) => void;
 }
 
 export interface CarProperties {
